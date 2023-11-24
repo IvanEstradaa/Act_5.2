@@ -5,6 +5,8 @@
 
 using namespace std;
 
+#define LINUX_PREFIX "../"
+
 int main()
 {
 
@@ -14,7 +16,7 @@ int main()
     // leemos el archivo de texto
     cout << "Recolectando Datos del Archivo" << endl;
 
-    ifstream File("bitacora2.txt");
+    ifstream File(LINUX_PREFIX"bitacora3-1.txt");
 
     // inicializamos el mapa donde registraremos la cantidad de veces que se repiten las direcciones ip
     map<string, int> ipMap; // como clave tenemos la direccion ip, sin el su puerto, y como valor, las n veces que se repite
@@ -47,7 +49,7 @@ int main()
     llDatos.bubbleSort();
     cout << "Se ordenaron los datos de la bitacora correctamente" << endl;
 
-    ofstream File2("bitacoraOrdenadaIP-Eq7-BST.txt");
+    ofstream File2(LINUX_PREFIX"bitacoraOrdenadaIP-Eq7-BST.txt");
     File2 << llDatos;
     File2.close();
 
