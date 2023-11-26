@@ -22,6 +22,8 @@ Dato::Dato(string line)
     this->ip = info[3];
     // Meter ip a su Struct
     IP_VALUE.FILL_IP(this->ip);
+    // Meter hora a su Struct
+    HORA_VALUE.FILL_HORA(this->hora);
 }
 
 int Dato::getDia()

@@ -39,12 +39,12 @@ int MyHashTable::getPos(string key) {
 }
 
 // Complejidad: O(1) en el mejor caso, O(n) en el peor caso al hacer rehashing
-void MyHashTable::put(string key, int value) {
+void MyHashTable::put(string key, Dato *data) {
     if (size > sizeA * 0.75) {
         rehashing();
     }
     int pos = getPos(key);
-    tabla[pos].emplace_back(key, value); 
+    tabla[pos].emplace_back(key, data); 
     size++;
 }
 

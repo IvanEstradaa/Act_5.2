@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <list>
+#include "LinkedList.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ public:
     MyHashTable(); 
     ~MyHashTable();
     bool isEmpty();
-    void put(string key, int value);
+    void put(string key, Dato *data);
     int get(string key);
     void remove(string key);
 

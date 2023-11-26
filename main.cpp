@@ -2,13 +2,13 @@
 #include "Dato.h"
 #include <map>
 #include "LinkedList.h"
+#include "MyHashTable.h"
 
 using namespace std;
 
 #define LINUX_PREFIX "../"
 
-int main()
-{
+int main(){
 
     string line;        // Var donde se almacenará la linea que se está leyendo del txt
     LinkedList llDatos; // Linked list donde se almacenarán los datos
@@ -20,21 +20,14 @@ int main()
 
     // inicializamos el mapa donde registraremos la cantidad de veces que se repiten las direcciones ip
     map<string, int> ipMap; // como clave tenemos la direccion ip, sin el su puerto, y como valor, las n veces que se repite
+    MyHashTable hashTable;
 
     // obtenemos cada linea del archivo de texto
     int lines_num = 0;
-    while (getline(File, line))
-    {
-        llDatos.insertLast(new Dato(line));
-        string strIP = (llDatos.last())->getIpNoPort(); // obtenemos la ip del primer dato del vector
-        if (ipMap.find(strIP) == ipMap.end())
-        {
-            ipMap[strIP] = 1; // si la ip no ha sido registrada en el mapa, le asignamos el valor de 1 repeticion
-        }
-        else
-        {
-            ipMap[strIP]++; // si la ip ya habia sido registrada en el mapa, le incrementamos en 1 la cantidad de repeticiones
-        }
+    while(getline(File, line)){
+        Dato *current = new Dato(line); // creamos un nuevo dato con la linea obtenida
+        string strIP = current->getIpNoPort(); // obtenemos la ip del primer dato del vector
+        hashTable.put(strIP, current); // insertamos el dato en la tabla hash
         lines_num++; // Aumentar contador de lineas
     }
     File.close();

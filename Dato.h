@@ -27,6 +27,22 @@ int port;
     }
 };
 
+struct Hora
+{
+int Hora;
+int Minuto;
+int Segundo;
+
+    void FILL_HORA(std::string hora)
+    {
+        std::stringstream ss(hora);
+        char colon;
+
+        // Extraer valores y meterlos al struct de IP
+        ss >> this->Hora >> colon >> this->Minuto >> colon >> this->Segundo;
+    }
+};
+
 class Dato
 {
 private:
@@ -38,6 +54,7 @@ private:
 
     int dia;
     IP IP_VALUE;
+    Hora HORA_VALUE;
 
 public:
     // Constructor
