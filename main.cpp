@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define LINUX_PREFIX "../"
+#define LINUX_PREFIX "./"
 
 int main(){
 
@@ -31,7 +31,6 @@ int main(){
         lines_num++; // Aumentar contador de lineas
         
         // Desconozco si esto es necesario de hacer
-        delete current;
     }
     File.close();
 

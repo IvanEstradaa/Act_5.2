@@ -15,12 +15,6 @@ struct HashNode {
 };
 
 class MyHashTable {
-private:
-    list<HashNode>* tabla;
-    int size; // Cantidad de valores que hay almacenados en la tabla
-    int sizeA; // Cantidad del arreglo
-    void rehashing(); // Crece el arreglo al doble del tamaño del arreglo actual + 1
-    int getPos(string key);
 public:
     MyHashTable(); 
     ~MyHashTable();
@@ -29,6 +23,12 @@ public:
     void get(string key);
     void remove(string key);
 
+private:
+    list<HashNode>* tabla;
+    int size; // Cantidad de valores que hay almacenados en la tabla
+    int sizeA; // Cantidad del arreglo
+    void rehashing(); // Crece el arreglo al doble del tamaño del arreglo actual + 1
+    int getPos(string key);
 };
 
 #endif

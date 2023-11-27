@@ -49,10 +49,10 @@ void MyHashTable::put(string key, Dato *data) {
 }
 
 // Complejidad: O(1) en el mejor caso, O(n) en el peor caso (cuando hay colisiones)
-void MyHashTable::get(string key){
+void MyHashTable::get(string key) {
     int pos = getPos(key);
     for (const auto& node : tabla[pos]) {
-        if (node.key == key){
+        if (node.key == key) {
             cout << node.data->getFullDate() << endl;
         }
     }
