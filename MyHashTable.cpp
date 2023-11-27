@@ -59,8 +59,7 @@ void MyHashTable::put(string key, Dato *data)
 
 // Complejidad: O(1) en el mejor caso, O(n) en el peor caso (cuando hay colisiones)
 void MyHashTable::get(string key)
-{
-    cout << "Size A: " << sizeA << endl;
+{   int reps = 0;
     int pos = getPos(key);
     list<Dato *> matchingValues;
 
@@ -75,8 +74,11 @@ void MyHashTable::get(string key)
     // Print or return the matching values
     for (const auto &value : matchingValues)
     {
-        cout << value->getFullDate() << " " << value->getIp() << endl;
+        cout << value->getFullDate() << endl;
+        reps++;
     }
+
+    cout << "Total de repeticiones: " << reps << endl;
 }
 
 // Complejidad: O(n), donde n es el número de elementos en la lista correspondiente a la posicion en el arreglo

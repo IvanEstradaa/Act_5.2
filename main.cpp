@@ -72,7 +72,7 @@ int main()
     string ipbusqueda;
     cout << "Ingresa una direccion IP (no incluir su puerto)"
          << "\n";
-    cout << "XX.XX.XXX.XXX -> " << endl;
+    cout << "XX.XX.XXX.XXX -> ";
     cin >> ipbusqueda;
 
     hashTable.get(ipbusqueda);
