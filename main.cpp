@@ -29,6 +29,9 @@ int main(){
         string strIP = current->getIpNoPort(); // obtenemos la ip del primer dato del vector
         hashTable.put(strIP, current); // insertamos el dato en la tabla hash
         lines_num++; // Aumentar contador de lineas
+        
+        // Desconozco si esto es necesario de hacer
+        delete current;
     }
     File.close();
 
@@ -36,6 +39,8 @@ int main(){
     {
         cout << "No se pudieron cargar los datos\n";
     }
+
+    /*
 
     cout << "Ordenando los datos de la bitacora " << endl;
     // ordenamos los datos de la bitacora por direcciones ip con un bubble sort
@@ -60,6 +65,16 @@ int main(){
 
     cout << "Imprimiendo las direcciones IP de la bitacora mas repetidas" << endl;
     // Buscamos las direcciones IP que mas veces trataron de ingresar
+
+    */
+
+    string ipbusqueda;
+    cout << "Ingresa una direccion IP (no incluir su puerto)" << "\n";
+    cout << "XX.XX.XXX.XXX -> ";
+    cin >> ipbusqueda;
+
+    hashTable.get(ipbusqueda);
+
 
     return 0;
 }

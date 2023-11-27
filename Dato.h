@@ -1,5 +1,5 @@
-#ifndef ACT2_3_DATO_H
-#define ACT2_3_DATO_H
+#ifndef DATO_H
+#define DATO_H
 
 #include <iostream>
 #include <sstream>
@@ -66,11 +66,12 @@ public:
     int getOcteto(int index);
     string getMes() const;
     int getDia();
+    string getFullDate();
     const string &getHora() const;
 
     // Operator overload
     friend ostream &operator<<(ostream &os, Dato &d){
-        os << d.mes << " " << d.dia << " " << d.hora << " " << d.ip << " " << d.fallo<<endl;
+        os << d.mes << " " << d.dia << "" << d.hora << " " << d.ip << " " << d.fallo<<endl;
         return os;
     }
 };

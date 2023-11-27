@@ -26,6 +26,10 @@ Dato::Dato(string line)
     HORA_VALUE.FILL_HORA(this->hora);
 }
 
+string Dato::getFullDate(){
+    return this->mes + " " + to_string(this->dia) + " " + this->hora;
+}
+
 int Dato::getDia()
 {
     return this->dia;
@@ -36,8 +40,7 @@ string Dato::getMes() const
     return mes;
 }
 
-const string &Dato::getHora() const
-{
+const string &Dato::getHora() const{
     return hora;
 }
 
