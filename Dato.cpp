@@ -26,7 +26,8 @@ Dato::Dato(string line)
     HORA_VALUE.FILL_HORA(this->hora);
 }
 
-string Dato::getFullDate(){
+string Dato::getFullDate()
+{
     return this->mes + " " + to_string(this->dia) + " " + this->hora;
 }
 
@@ -40,15 +41,18 @@ string Dato::getMes() const
     return mes;
 }
 
-const string &Dato::getHora() const{
+const string &Dato::getHora() const
+{
     return hora;
 }
 
-string Dato::getIp(){
+string Dato::getIp()
+{
     return this->ip;
 }
 
-string Dato::getIpNoPort(){
+string Dato::getIpNoPort()
+{
     this->stringIp = to_string(this->getOcteto(1)) + "." + to_string(this->getOcteto(2)) + "." + to_string(this->getOcteto(3)) + "." + to_string(this->getOcteto(4));
     return stringIp;
 }

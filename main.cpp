@@ -8,7 +8,8 @@ using namespace std;
 
 #define LINUX_PREFIX "./"
 
-int main(){
+int main()
+{
 
     string line;        // Var donde se almacenará la linea que se está leyendo del txt
     LinkedList llDatos; // Linked list donde se almacenarán los datos
@@ -16,7 +17,7 @@ int main(){
     // leemos el archivo de texto
     cout << "Recolectando Datos del Archivo" << endl;
 
-    ifstream File(LINUX_PREFIX"bitacora3-1.txt");
+    ifstream File(LINUX_PREFIX "bitacora3-1.txt");
 
     // inicializamos el mapa donde registraremos la cantidad de veces que se repiten las direcciones ip
     map<string, int> ipMap; // como clave tenemos la direccion ip, sin el su puerto, y como valor, las n veces que se repite
@@ -24,12 +25,13 @@ int main(){
 
     // obtenemos cada linea del archivo de texto
     int lines_num = 0;
-    while(getline(File, line)){
-        Dato *current = new Dato(line); // creamos un nuevo dato con la linea obtenida
+    while (getline(File, line))
+    {
+        Dato *current = new Dato(line);        // creamos un nuevo dato con la linea obtenida
         string strIP = current->getIpNoPort(); // obtenemos la ip del primer dato del vector
-        hashTable.put(strIP, current); // insertamos el dato en la tabla hash
-        lines_num++; // Aumentar contador de lineas
-        
+        hashTable.put(strIP, current);         // insertamos el dato en la tabla hash
+        lines_num++;                           // Aumentar contador de lineas
+
         // Desconozco si esto es necesario de hacer
     }
     File.close();
@@ -68,12 +70,12 @@ int main(){
     */
 
     string ipbusqueda;
-    cout << "Ingresa una direccion IP (no incluir su puerto)" << "\n";
-    cout << "XX.XX.XXX.XXX -> ";
+    cout << "Ingresa una direccion IP (no incluir su puerto)"
+         << "\n";
+    cout << "XX.XX.XXX.XXX -> " << endl;
     cin >> ipbusqueda;
 
     hashTable.get(ipbusqueda);
-
 
     return 0;
 }
